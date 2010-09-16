@@ -33,6 +33,9 @@ import prob.Bayes;
  * regardless of any other information. Since half of the girls and all of the 
  * boys are wearing trousers, this is 0.5×0.4 + 1.0×0.6 = 0.8.
  * 
+ * p(A | B) = p(B | A) p(A) / p(B)
+ * p(Girl | Trousers) = p(Trousers| Girl)p(Girl)/p(Trousers)
+ * 
  * The answer is 0.25 (25%)
  */
 public class StudentTrousersTestCase
@@ -99,7 +102,7 @@ public class StudentTrousersTestCase
 	}
 	
 	/**
-	 * P(A|B) = P(Girl | Trousers)  
+	 * P(A|B) = p(Girl | Trousers)  
 	 *        = p(Trousers| Girl)p(Girl)/p(Trousers)
 	 */
 	@Test public void testStudentGirlWearingTrousers()

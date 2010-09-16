@@ -6,6 +6,11 @@ Basically my math could be better, I've forgotten most of what I learned. This
 project is intended to provide a sandbox for me to implement examples and test
 ideas in order to promote continuous learning of probability and related maths.
 
+Most examples are implemented in Java as unit tests.
+
+Topics:
+- Bayes
+
 
 License
 
