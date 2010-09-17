@@ -9,7 +9,8 @@ import org.junit.runners.Suite;
 			DiseaseTestCase.class,
 			DrugTestingTestCase.class,
 			StudentTrousersTestCase.class,
-			MontyHallTestCase.class
+			MontyHallTestCase.class,
+			SmartiesAndMandMsTestCase.class
 			})
 public class AllTests {
 }
