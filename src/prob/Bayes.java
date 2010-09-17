@@ -19,6 +19,7 @@ package prob;
 public class Bayes
 {
 	
+	
 	public final static double pAGivenB(double a, double b)
 	{
 		// can this be normalized? 
@@ -31,12 +32,12 @@ public class Bayes
 	 * 1 in 1,000,000 converted to a probability
 	 * 
 	 * @param occurances
-	 * @param total
+	 * @param totalOccurances
 	 * @return
 	 */
 	public final static double observationToProbability(
-			double occurances, double total)
+			double occurances, double totalOccurances)
 	{
-		return occurances/total;
+		return occurances/totalOccurances;
 	}
 }

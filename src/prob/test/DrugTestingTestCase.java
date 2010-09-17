@@ -78,6 +78,7 @@ public class DrugTestingTestCase
 	@Test public void testPositive()
 	{
 		// a drug user tests positive
+		// true positive
 		
 		// p(user)
 		double probUser = Bayes.observationToProbability(0.5, 100);
@@ -90,6 +91,7 @@ public class DrugTestingTestCase
 		assertEquals(0.00495, userTestsPositive, 0);
 		
 		// not user and positive
+		// false positive
 		
 		// p(non user)
 		double probNonUser = 1.0-Bayes.observationToProbability(0.5, 100);
