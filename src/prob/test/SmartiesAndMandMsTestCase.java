@@ -136,7 +136,7 @@ public class SmartiesAndMandMsTestCase
 		
 		// P(Smartie | Green)
 		double probSmartieGivenGreen = (probGreenGivenSmartie*probSmartie) / probGreen;
-		System.out.println(probSmartieGivenGreen);
+		assertEquals(0.5, probSmartieGivenGreen, 0);
 	}
 
 	/**
@@ -166,11 +166,31 @@ public class SmartiesAndMandMsTestCase
 	/**
 	 * Draw 4, what is the probability of 3 being one brand and 1 another?
 	 * 
-	 * P()
-	 * 
 	 */
 	@Test public void testBrandPartition()
 	{
+		// prob of an m&m
+		double probMandM = Bayes.observationToProbability(5, 9);
+		assertEquals(0.555, probMandM, 1.0E-3);
+		// prob of a smartie
+		double probSmartie = Bayes.observationToProbability(4, 9);
+		assertEquals(0.444, probSmartie, 1.0E-3);
 		
+		// probability of 3*M&M 1*Smartie
+		// P(M&M)^3 because they are AND's 
+		// = P(M&M)*P(M&M)*P(M&M) * P(Smartie)
+		double probThreeMandMOneSmartie = probMandM * probMandM * probMandM * probSmartie;
+		assertEquals(0.0759, probThreeMandMOneSmartie, 0.001);
+		
+		// probability of 3*smarties and 1*M&M
+		// P(Smartie)*P(Smartie)*P(Smartie) * P(M&M)
+		double probThreeSmartieOneMandM = probSmartie*probSmartie*probSmartie * probMandM;
+		assertEquals(0.0486, probThreeSmartieOneMandM, 0.001);
+		
+		// probability of getting 3 & 1 in a given set of 4
+		// here the 4 comes from the fact that you can only have 4 possible cases of each
+		// MMMS, MMSM, MSMM, SMMM, and the inverse
+		double prob4And1 = (4*probThreeMandMOneSmartie) + (4*probThreeSmartieOneMandM);
+		assertEquals(0.4999, prob4And1, 0.0001);
 	}
 }
