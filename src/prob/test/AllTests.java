@@ -8,7 +8,8 @@ import org.junit.runners.Suite;
 		{ 
 			DiseaseTestCase.class,
 			DrugTestingTestCase.class,
-			StudentTrousersTestCase.class
+			StudentTrousersTestCase.class,
+			MontyHallTestCase.class
 			})
 public class AllTests {
 }
