@@ -31,13 +31,13 @@ public class Bayes
 	 * Observation to a probability
 	 * 1 in 1,000,000 converted to a probability
 	 * 
-	 * @param occurances
+	 * @param numOccurances
 	 * @param totalOccurances
 	 * @return
 	 */
 	public final static double observationToProbability(
-			double occurances, double totalOccurances)
+			double numOccurances, double totalOccurances)
 	{
-		return occurances/totalOccurances;
+		return numOccurances/totalOccurances;
 	}
 }
